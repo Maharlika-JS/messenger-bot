@@ -4,11 +4,9 @@ const request = require("request");
 
 const app = express().use(bodyParser.json());
 
-// ===== VERIFY TOKEN =====
-const VERIFY_TOKEN = "my_verify_token";
-
-// ===== PAGE ACCESS TOKEN (palitan mo ng galing Meta) =====
-const PAGE_ACCESS_TOKEN = "EAAZA5XZBfWF8wBPfU4kZCUwn0lXbhTVSvyiP4AiGqCHGPoTWNX82ZCZAFZCFvniaFb2pBKZB2tBm2BFq51ixeRbZAJwNfAa8cG1ghASlyHBDuODHZBZBKrunHpLZB2xHZClfComCb1EKOXVv1ejzJ1ydtyu5XhsGPBEOGIWpF0UfJDFi3xKM7Rt0xKwqrw8FPPwEVNMHgxJlFwZDZD";
+// ===== Tokens galing sa Environment (Render) =====
+const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 // ===== Function para mag-reply =====
 function callSendAPI(sender_psid, response) {
